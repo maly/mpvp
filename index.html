@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="MPVP" />
+  <meta name="author" content="MPVP" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:800&display=swap" rel="stylesheet" />
+  <style>
+  body {text-align:center;
+  font-family: "Open Sans", sans-serif;
+  }
+  </style>
+</head>
+
+<body>
+
 <script>
         (function (w,d,s,o,f,js,fjs) {
             w['ecm-widget']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
@@ -6,3 +24,25 @@
         }(window, document, 'script', 'ecmwidget', 'https://d70shl7vidtft.cloudfront.net/widget.js'));
     </script>
             <div id="f-1-43c2cd496486bcc27217c3e790fb4088"></div>
+			
+			
+			<h1>Aktuální vydání</h1>
+			<div id="recent"></div>
+			
+<script>
+
+(async ()=>{
+
+  const renderT = (d) => `<a href="${d.archive_url}"><h2>${d.title}</h2></a><p><small>${d.sent_at}</small></p>`
+
+  let res = await fetch("https://getacampaign.cloudflare-40e.workers.dev/proxy")
+  let data = await res.json();
+  let html = renderT(data[0])
+  document.getElementById("recent").html=html
+})()
+
+</script>			
+			
+			
+</body>
+</html>
