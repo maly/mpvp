@@ -37,6 +37,7 @@
 
   let res = await fetch("https://getacampaign.cloudflare-40e.workers.dev/proxy")
   let data = await res.json();
+  data = data.filter(q=>q.id>2)
   let html = renderT(data.shift())
   document.getElementById("recent").innerHTML=html
 })()
