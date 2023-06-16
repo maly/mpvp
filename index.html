@@ -125,7 +125,7 @@
 
   let res = await fetch("https://getcampaign.info-07c.workers.dev/proxy")
   let data = await res.json();
-  //data = data.filter(q=>q.id>2)
+  data = data.filter(q=>q.id>2)
   if (data && data.length>0) {
 	let html = renderT(data.shift())
 	document.getElementById("recent").innerHTML=html
