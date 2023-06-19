@@ -164,8 +164,8 @@ const checkMail = () => {
 
 (async ()=>{
 
-  const renderT = (d) => `<a href="${d.archive_url}"><h3 class="fw-600 h5">${d.title}</h3></a><p class="mb-0"><small>${d.sent_at}</small></p>`
-  const renderT2 = (d) => `<div class="border-bottom py-2 px-5 border-2 border-dark"><a href="${d.archive_url}"><h3 class="fw-600 h5">${d.title}</h3></a><p class="mb-0"><small>${d.sent_at}</small></p></div>`
+  const renderT = (d) => `<a href="${d.archive_url}"><h3 class="fw-600 h5">${d.subject}</h3></a><p class="mb-0"><small>${d.sent_at}</small></p>`
+  const renderT2 = (d) => `<div class="border-bottom py-2 px-5 border-2 border-dark"><a href="${d.archive_url}"><h3 class="fw-600 h5">${d.subject}</h3></a><p class="mb-0"><small>${d.sent_at}</small></p></div>`
 
   let res = await fetch("https://n.mp-vp.cz/proxy")
   let data = await res.json();
