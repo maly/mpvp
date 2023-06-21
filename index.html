@@ -170,6 +170,7 @@ const checkMail = () => {
   let res = await fetch("https://n.mp-vp.cz/proxy")
   let data = await res.json();
   data = data.filter(q=>q.id>2)
+  data = data.filter(q=>q.from_name=="Půr a Piskáček")
   if (data && data.length>0) {
 	let html = renderT(data.shift())
 	document.getElementById("recent").innerHTML=html
